@@ -59,6 +59,7 @@ class Pay extends Base {
    * @param key 可选参数 APIv3密钥
    */
   public constructor(obj: Ipay);
+  
   public constructor(arg1: Ipay | string, mchid?: string, publicKey?: Buffer, privateKey?: Buffer, optipns?: Ioptions) {
     super();
 
@@ -246,7 +247,13 @@ class Pay extends Base {
   private sign(str: string) {
     return this.sha256WithRsa(str);
   }
-  // 获取序列号
+  /**
+   * 获取序列号
+   *
+   * @param {(string | Buffer)} [fileData]
+   * @return {*}  {string}
+   * @memberof Pay
+   */
   public getSN(fileData?: string | Buffer): string {
     if (!fileData && !this.publicKey) throw new Error('缺少公钥');
     if (!fileData) fileData = this.publicKey;
@@ -260,7 +267,6 @@ class Pay extends Base {
   /**
    * SHA256withRSA
    * @param data 待加密字符
-   * @param privatekey 私钥key  key.pem   fs.readFileSync(keyPath)
    */
   public sha256WithRsa(data: string): string {
     if (!this.privateKey) throw new Error('缺少秘钥文件');

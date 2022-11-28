@@ -1,5 +1,5 @@
 ## 下载账单
-```bash
+```ts
 import WxPay from 'wechatpay-node-v3';
 import fs from 'fs';
 
@@ -11,6 +11,6 @@ const pay = new WxPay({
 });
 ```
 ## 使用
-```bash
+```ts
 const data = await pay.downloadbill(download_url);
 ```

@@ -1,5 +1,5 @@
-## 下载账单
-```bash
+## 关闭订单
+```ts
 import WxPay from 'wechatpay-node-v3';
 import fs from 'fs';
 
@@ -11,10 +11,10 @@ const pay = new WxPay({
 });
 ```
 ## 使用
-```bash
-  const reuslt = await pay.close(out_trade_no);
-   console.log(reuslt);
-  # {
-  #   'status': 204
-  # }
+```ts
+  const result = await pay.close(out_trade_no);
+   console.log(result);
+  //  {
+  //    'status': 204
+  //  }
 ```

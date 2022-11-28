@@ -1,5 +1,5 @@
 ## 微信提现到零钱
-```bash
+```ts
 import WxPay from 'wechatpay-node-v3';
 import fs from 'fs';
 
